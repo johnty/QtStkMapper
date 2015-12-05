@@ -15,7 +15,7 @@ extern "C" {
 #include <mapper/mapper.h>
 }
 
-#define NUMVOICES 16
+#define NUMVOICES 1
 
 using namespace stk;
 
@@ -134,21 +134,21 @@ int setup_mapper()
     printf("BeeThree device created.\n");
 
     sig = mdev_add_input(dev, "/frequency", 1, 'f', "Hz", &mn, &mx, freq_handler, voices);
-    msig_reserve_instances(sig, NUMVOICES-1, 0, 0);
+    msig_reserve_instances(sig, NUMVOICES-1);
    // msig_set_instance_allocation_mode(sig, IN_STEAL_OLDEST);
 
     mx = 1.0;
     sig = mdev_add_input(dev, "/feedback_gain", 1, 'f', 0, &mn, &mx, feedback_gain_handler, voices);
-    msig_reserve_instances(sig, NUMVOICES-1, 0, 0);
+    msig_reserve_instances(sig, NUMVOICES-1);
 
     sig = mdev_add_input(dev, "/gain", 1, 'f', 0, &mn, &mx, gain_handler, voices);
-    msig_reserve_instances(sig, NUMVOICES-1, 0, 0);
+    msig_reserve_instances(sig, NUMVOICES-1);
 
     sig = mdev_add_input(dev, "/LFO/speed", 1, 'f', "Hz", &mn, 0, LFO_speed_handler, voices);
-    msig_reserve_instances(sig, NUMVOICES-1, 0, 0);
+    msig_reserve_instances(sig, NUMVOICES-1);
 
     sig = mdev_add_input(dev, "/LFO/depth", 1, 'f', 0, &mn, &mx, LFO_depth_handler, voices);
-    msig_reserve_instances(sig, NUMVOICES-1, 0, 0);
+    msig_reserve_instances(sig, NUMVOICES-1);
 
     printf("Number of inputs: %d\n", mdev_num_inputs(dev));
     return 0;
