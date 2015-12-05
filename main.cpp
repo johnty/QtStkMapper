@@ -161,7 +161,7 @@ int setup_mapper()
   //  msig_reserve_instances(sig, NUMVOICES-1);
    // msig_set_instance_allocation_mode(sig, IN_STEAL_OLDEST);
 
-    mx = 1.0;
+    mx = 128.0;
     sig = mdev_add_input(dev, "/feedback_gain", 1, 'f', 0, &mn, &mx, feedback_gain_handler, 0);
     //msig_reserve_instances(sig, NUMVOICES-1);
 
