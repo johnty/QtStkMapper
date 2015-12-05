@@ -17,7 +17,7 @@ CONFIG   += c++11
 macx:DEFINES += __MACOSX_CORE__
 
 #libs:
-unix: LIBS +=  -lmapper-0 -llo -lstk
+unix: LIBS +=  -lmapper- -llo -lstk
 
 macx:LIBS += -framework CoreAudio
 macx:LIBS += -framework CoreFoundation
@@ -27,7 +27,7 @@ macx:LIBS += -framework CoreFoundation
 unix: LIBS += -L/Users/johnty/Documents/dev/stk/src -L/usr/local/lib
 
 #include paths
-unix: INCLUDEPATH += /usr/local/include/mapper-0
+unix: INCLUDEPATH += /usr/local/include/mapper-
 unix: INCLUDEPATH += /usr/local/include/
 unix: INCLUDEPATH += /Users/johnty/Documents/dev/stk/include
 
