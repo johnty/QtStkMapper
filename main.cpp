@@ -56,11 +56,12 @@ void freq_handler(mapper_signal sig, mapper_db_signal props,
 {
     if (value) {
         StkFloat f = *((float *)value);
+        voice->noteOn(f, 1);
+        freq = f;
+        print_stats();
         // need to check if voice is already active
         if (active[instance_id] == 0) {
-            voice->noteOn(f, 1);
-            freq = f;
-            print_stats();
+
             //print_stats();
             //voices[instance_id]->noteOn(f, 1);
             active[instance_id] = 1;
